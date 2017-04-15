@@ -1,4 +1,4 @@
-# FCC React Exercises
+# FCC React Exercises - Camper Leaderboard
 
 Created to show camper leaderboard of past 30 days and all time.
 

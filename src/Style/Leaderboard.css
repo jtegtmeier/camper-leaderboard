@@ -1,0 +1,51 @@
+.Leaderboard {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: 85vh;
+}
+
+.Leaderboard div {
+  overflow: scroll;
+}
+
+.clickable {
+  cursor: pointer;
+  cursor: hand;
+  background: lightblue;
+}
+
+.selected {
+  border: 2px solid black;
+}
+
+table {
+  text-align: center;
+  margin: 0;
+}
+
+table th {
+  padding: 3px;
+  font-size: 1.3em;
+  border-radius: 2px;
+}
+
+table td {
+  padding: 3px;
+  border: 1px solid black;
+  border-radius: 2px;
+  background: lightgrey;
+}
+
+.camper {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.camper img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 3px;
+}

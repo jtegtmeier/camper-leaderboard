@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import '../Style/Leaderboard.css'
 
 export default class Leaderboard extends React.Component {
   constructor(props) {
@@ -34,24 +35,32 @@ export default class Leaderboard extends React.Component {
     this.setState({selectUsersBy: 'recent'})
   }
 
+  checkActiveSelect(selecter){
+    return this.state.selectUsersBy === selecter ? "selected" : ""
+  }
+
   render() {
     let campers
-    switch(this.selectUsersBy){
+
+    switch(this.state.selectUsersBy){
       case 'alltime': campers = this.state.alltime
       break
       case 'recent': campers = this.state.recent
       break
-      default: campers = this.state.alltime
+      default: campers = []
     }
+
     return (
-      <div style={{display: "flex"}}>
+      <div className="Leaderboard">
+        <h2>Leaderboard</h2>
+        <div>
         <table>
           <thead>
             <tr>
               <th>Rank</th>
               <th>Camper</th>
-              <th onClick={this.selectRecent}>Recent Score</th>
-              <th onClick={this.selectAllTime}>All Time Score</th>
+              <th className={"clickable " + this.checkActiveSelect("recent")} onClick={this.selectRecent}>Recent</th>
+              <th className={"clickable " + this.checkActiveSelect("alltime")} onClick={this.selectAllTime}>All Time</th>
             </tr>
           </thead>
           <tbody>
@@ -59,7 +68,7 @@ export default class Leaderboard extends React.Component {
               return (
                 <tr key={i}>
                   <td>{i}</td>
-                  <td>{obj.username}</td>
+                  <td className="camper"><img src={obj.img} alt={obj.username}></img>{obj.username}</td>
                   <td>{obj.recent}</td>
                   <td>{obj.alltime}</td>
                 </tr>
@@ -67,7 +76,8 @@ export default class Leaderboard extends React.Component {
             })}
           </tbody>
         </table>
+        </div>
       </div>
-    );
+    )
   }
 }

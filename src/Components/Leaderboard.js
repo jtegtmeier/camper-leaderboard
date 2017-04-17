@@ -67,7 +67,7 @@ export default class Leaderboard extends React.Component {
             {campers.map((obj, i) => {
               return (
                 <tr key={i}>
-                  <td>{i}</td>
+                  <td>{i+1}</td>
                   <td className="camper"><img src={obj.img} alt={obj.username}></img>{obj.username}</td>
                   <td>{obj.recent}</td>
                   <td>{obj.alltime}</td>

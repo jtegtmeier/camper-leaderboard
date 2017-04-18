@@ -52,7 +52,6 @@ export default class Leaderboard extends React.Component {
 
     return (
       <div className="Leaderboard">
-        <h2>Leaderboard</h2>
         <div>
         <table>
           <thead>
